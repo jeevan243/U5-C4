@@ -38,7 +38,7 @@ export const Home = () => {
       <div className="subscribedData">
         <div>
           <select
-            value={"add your value here"} // add value here
+            // add value here
             onChange={(e) => {}}
           >
             <option value="">------</option>
