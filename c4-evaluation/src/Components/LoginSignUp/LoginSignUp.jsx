@@ -1,7 +1,13 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { userLogin } from "../../Redux/Login/action";
 
 export const LoginSignUp = () => {
+  const user = useSelector((store) => store.user);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const obj = {
     name: "",
     password: "",
@@ -13,7 +19,7 @@ export const LoginSignUp = () => {
   const [userData, setUserdata] = useState(obj);
 
   const handleChange = (e) => {
-    let { id, value, checked} = e.target;
+    let { id, value, checked } = e.target;
     if (checked) {
       setUserdata({ ...userData, interests: [...userData.interests, id] });
     } else {
@@ -34,7 +40,56 @@ export const LoginSignUp = () => {
 
   //login
 
-  
+  const logObj = {
+    name: "",
+    password: "",
+  };
+
+  const [logUser, setLoguser] = useState(logObj);
+  const [userServerdata, setUserserverData] = useState({});
+
+  //handleChange
+  const logHandleChange = (e) => {
+    const { id, value } = e.target;
+
+    setLoguser({
+      ...logUser,
+      [id]: value,
+    });
+  };
+
+  useEffect(() => {
+    getUserData();
+  }, []);
+
+  const getUserData = () => {
+    axios.get("http://localhost:8080/users").then((res) => {
+      setUserserverData(res.data);
+    });
+  };
+  console.log(userServerdata);
+  //Login submit
+  const logHandleSubmit = (e) => {
+    e.preventDefault();
+
+    let flag = false;
+    for (let i = 0; i < userServerdata.length; i++) {
+      if (
+        userServerdata[i].name == logUser.name &&
+        userServerdata[i].password == logUser.password
+      ) {
+        flag = true;
+      }
+    }
+    if (flag) {
+      alert("logged in successfully");
+      dispatch(userLogin({ user: true }));
+      navigate("/");
+    } else {
+      alert("Enter valid credentials");
+    }
+  };
+
   return (
     <div className="loginSignUp">
       <form className="signUp" onSubmit={signupHandleSubmit}>
@@ -125,14 +180,16 @@ export const LoginSignUp = () => {
         <br />
         <input type="submit" className="submitSignUpForm" id="submitSignup" />
       </form>
-      <form className="login" onSubmit={(e) => {}}>
+
+      {/*  */}
+      <form className="login" onSubmit={logHandleSubmit}>
         <h1>Login</h1>
         <label>name</label>
         <input
           type="text"
           className="name"
           id="name"
-          onChange={(event) => {}}
+          onChange={logHandleChange}
           required
         />
         <br />
@@ -141,7 +198,7 @@ export const LoginSignUp = () => {
           type="text"
           className="password"
           id="password"
-          onChange={(event) => {}}
+          onChange={logHandleChange}
           required
         />
         <br />
