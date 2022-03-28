@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "name": "Samuel",
+      "password": "secret",
+      "location": "bangalore",
+      "interests": ["technology", "food", "movies", "culture", "art", "drama"],
+      "image": "https://images.unsplash.com/photo",
+      "id": 1,
+      "subscribed": [1, 5]
+    }
+  ],
+  "meetups": [
+    {
+      "id": 1,
+      "title": "Saunter Strech",
+      "location": "bangalore",
+      "date": "2022-03-25",
+      "time": "23:59",
+      "theme": "technology",
+      "description": "Random Event",
+      "image": "https://images.unsplash.com/photo"
+    }
+  ]
+}
