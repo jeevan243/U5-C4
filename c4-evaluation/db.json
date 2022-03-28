@@ -43,6 +43,16 @@
       "theme": "technology",
       "description": "Random Event",
       "image": "https://images.unsplash.com/photo"
+    },
+    {
+      "title": "",
+      "location": "bangalore",
+      "date": "45454465",
+      "time": "645656",
+      "theme": "food",
+      "description": "dswsd",
+      "image": "https://aeo.imgix.net/img/app/product/6/646046-6473065.jpg?w=312&auto=format",
+      "id": 2
     }
   ]
 }
