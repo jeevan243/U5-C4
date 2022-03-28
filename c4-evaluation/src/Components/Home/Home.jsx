@@ -13,14 +13,14 @@ export const Home = () => {
   useEffect(() => {
     getData();
   }, []);
-  console.log(data)
+  console.log(data);
   return (
     <div className="homeContainer">
       {data
         // .filter((el) => {}) // Filter on the basis of Users interests and location (both true)
         .map((el) => {
           return (
-            <Link to={`add route here`} className="events">
+            <Link to={`meetup/:id`} className="events">
               <div className="title">{el.title}</div>
               <div className="theme">{el.theme}</div>
               <div className="description">{el.description}</div>
@@ -48,7 +48,7 @@ export const Home = () => {
             <option value="mumbai">Mumbai</option>
           </select>
         </div>
-        <Link to={`add your route here`}> Add Meetup</Link>
+        <Link to={`/addmeetup`}> Add Meetup</Link>
         <h1>Subscribed Events</h1>
         <div className="subscribedEvents">
           {/* All user subcribed events should be displayed here in an ascending order of date */}
