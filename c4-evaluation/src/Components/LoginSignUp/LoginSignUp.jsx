@@ -34,7 +34,6 @@ export const LoginSignUp = () => {
     e.preventDefault();
 
     axios.post("http://localhost:8080/users", userData).then(() => {
-      alert("User registerd successfully");
     });
   };
 
@@ -82,7 +81,6 @@ export const LoginSignUp = () => {
       }
     }
     if (flag) {
-      alert("logged in successfully");
       dispatch(userLogin({ user: true }));
       navigate("/");
     } else {

@@ -4,31 +4,16 @@
       "name": "Samuel",
       "password": "secret",
       "location": "bangalore",
-      "interests": [
-        "technology",
-        "food",
-        "movies",
-        "culture",
-        "art",
-        "drama"
-      ],
+      "interests": ["technology", "food", "movies", "culture", "art", "drama"],
       "image": "https://images.unsplash.com/photo",
       "id": 1,
-      "subscribed": [
-        1,
-        5
-      ]
+      "subscribed": [1, 5]
     },
     {
       "name": "jeevan",
       "password": "masaischool",
       "location": "kolkata",
-      "interests": [
-        "technology",
-        "food",
-        "drama",
-        "art"
-      ],
+      "interests": ["technology", "food", "drama", "art"],
       "image": "https://aeo.imgix.net/img/app/product/6/646046-6473065.jpg?w=312&auto=format",
       "id": 2
     }
@@ -45,14 +30,14 @@
       "image": "https://images.unsplash.com/photo"
     },
     {
-      "title": "",
+      "id": 2,
+      "title": "trichi",
       "location": "bangalore",
       "date": "45454465",
       "time": "645656",
       "theme": "food",
       "description": "dswsd",
-      "image": "https://aeo.imgix.net/img/app/product/6/646046-6473065.jpg?w=312&auto=format",
-      "id": 2
+      "image": "https://aeo.imgix.net/img/app/product/6/646046-6473065.jpg?w=312&auto=format"
     }
   ]
 }
